@@ -7,4 +7,5 @@ public interface TutorialService {
 
   List<TutorialDTO> getAllTutorials();
 
+  TutorialDTO getTutorialById(Long id);
 }

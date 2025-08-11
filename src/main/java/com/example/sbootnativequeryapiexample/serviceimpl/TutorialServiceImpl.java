@@ -25,6 +25,12 @@ public class TutorialServiceImpl implements TutorialService {
     return tutorialRepository.getAllTutorials().stream().map(this::convertToDTO).collect(Collectors.toList());
   }
 
+  @Override
+  public TutorialDTO getTutorialById(Long id) {
+    Tutorial foundTutorial = tutorialRepository.getTutorialById(id);
+    return convertToDTO(foundTutorial);
+  }
+
   private Tutorial convertToEntity(TutorialDTO tutorialDTO) {
     return new Tutorial(tutorialDTO.id(), tutorialDTO.title(), tutorialDTO.description(), tutorialDTO.level(),
         tutorialDTO.published());
