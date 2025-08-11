@@ -8,4 +8,6 @@ public interface TutorialService {
   List<TutorialDTO> getAllTutorials();
 
   TutorialDTO getTutorialById(Long id);
+
+  List<TutorialDTO> getTutorialsByPublished(Boolean published);
 }

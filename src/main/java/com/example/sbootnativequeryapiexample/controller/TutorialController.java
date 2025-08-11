@@ -39,4 +39,9 @@ public class TutorialController {
       return ResponseEntity.notFound().build();
     }
   }
+
+  @GetMapping("/published/{published}")
+  public List<TutorialDTO> getTutorialsByPublished(@PathVariable Boolean published) {
+    return tutorialService.getTutorialsByPublished(published);
+  }
 }
