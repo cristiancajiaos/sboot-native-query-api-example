@@ -10,4 +10,6 @@ public interface TutorialService {
   TutorialDTO getTutorialById(Long id);
 
   List<TutorialDTO> getTutorialsByPublished(Boolean published);
+
+  List<TutorialDTO> getTutorialsByTitleLike(String title);
 }

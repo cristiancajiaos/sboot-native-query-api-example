@@ -44,4 +44,9 @@ public class TutorialController {
   public List<TutorialDTO> getTutorialsByPublished(@PathVariable Boolean published) {
     return tutorialService.getTutorialsByPublished(published);
   }
+
+  @GetMapping("/title-like/{title}")
+  public List<TutorialDTO> getTutorialsByTitleLike(@PathVariable String title) {
+    return tutorialService.getTutorialsByTitleLike(title);
+  }
 }

@@ -37,6 +37,12 @@ public class TutorialServiceImpl implements TutorialService {
         Collectors.toList());
   }
 
+  @Override
+  public List<TutorialDTO> getTutorialsByTitleLike(String title) {
+    return tutorialRepository.getTutorialsByTitleLike(title).stream().map(this::convertToDTO).collect(
+        Collectors.toList());
+  }
+
 
   private Tutorial convertToEntity(TutorialDTO tutorialDTO) {
     return new Tutorial(tutorialDTO.id(), tutorialDTO.title(), tutorialDTO.description(), tutorialDTO.level(),
