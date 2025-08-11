@@ -49,4 +49,9 @@ public class TutorialController {
   public List<TutorialDTO> getTutorialsByTitleLike(@PathVariable String title) {
     return tutorialService.getTutorialsByTitleLike(title);
   }
+
+  @GetMapping("/title-ci-like/{title}")
+  public List<TutorialDTO> getTutorialsByTitleCaseInsensitiveLike(@PathVariable String title) {
+    return tutorialService.getTutorialsByTitleCaseInsensitiveLike(title);
+  }
 }

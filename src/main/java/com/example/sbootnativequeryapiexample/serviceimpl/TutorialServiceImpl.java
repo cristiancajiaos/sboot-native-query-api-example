@@ -43,6 +43,12 @@ public class TutorialServiceImpl implements TutorialService {
         Collectors.toList());
   }
 
+  @Override
+  public List<TutorialDTO> getTutorialsByTitleCaseInsensitiveLike(String title) {
+    return tutorialRepository.getTutorialsByTitleCaseInsensitiveLike(title).stream().map(this::convertToDTO).collect(
+        Collectors.toList());
+  }
+
 
   private Tutorial convertToEntity(TutorialDTO tutorialDTO) {
     return new Tutorial(tutorialDTO.id(), tutorialDTO.title(), tutorialDTO.description(), tutorialDTO.level(),

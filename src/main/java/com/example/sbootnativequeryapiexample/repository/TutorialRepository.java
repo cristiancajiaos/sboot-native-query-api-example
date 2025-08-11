@@ -19,4 +19,7 @@ public interface TutorialRepository extends JpaRepository<Tutorial, Long> {
   @Query(value = "SELECT * FROM tutorials t WHERE t.title LIKE %?1%", nativeQuery = true)
   List<Tutorial> getTutorialsByTitleLike(String title);
 
+  @Query(value = "SELECT * FROM tutorials t WHERE LOWER(t.title) LIKE LOWER(CONCAT('%', ?1, '%'))", nativeQuery = true)
+  List<Tutorial> getTutorialsByTitleCaseInsensitiveLike(String title);
+
 }
